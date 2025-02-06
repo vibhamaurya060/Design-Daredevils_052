@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css'
 import logo from '../assets/home.png';
+
 const Navbar = () => {
   const navigate = useNavigate();
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
@@ -25,6 +26,7 @@ const Navbar = () => {
         
         <div className="space-x-8">
           <Link to="/" className="hover:underline text-black font-bold text-xl">Home</Link>
+          <Link to="/propertylisting">Property</Link>
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
