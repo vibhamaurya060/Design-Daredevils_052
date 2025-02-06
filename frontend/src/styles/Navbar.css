@@ -1,0 +1,12 @@
+.nav{
+    background-image: linear-gradient(#c6c1ff, #ded8f8);
+    padding: 1rem;
+}
+
+
+.loginBtn{
+    width: 90px;
+    border: 2px solid rgb(208, 154, 255);
+    padding: 5px;
+    border-radius: 25px;
+}
