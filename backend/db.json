@@ -1,97 +1,324 @@
 {
   "properties": [
     {
-      "title": "Modern 1-Bedroom Apartment in Bangalore",
-      "description": "A contemporary 1-bedroom apartment with sleek finishes and a spacious layout. Ideally located near the city center, close to cafes, shopping centers, and metro stations.",
-      "price": 6000000,
+      "title": "Luxury 3-Bedroom House in Hyderabad",
+      "description": "A spacious 3-bedroom house with private gardens and premium finishes. Located in Jubilee Hills, offering exclusivity and tranquility.",
+      "price": 20000000,
       "location": {
-        "address": "22 MG Road",
-        "city": "Bangalore",
-        "state": "Karnataka",
-        "zipCode": "560001"
+        "address": "33 Banjara Avenue",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "zipCode": "500033"
       },
-      "propertyType": "Apartment",
-      "bedrooms": 1,
-      "bathrooms": 1,
-      "squareFootage": 800,
+      "propertyType": "House",
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "squareFootage": 2400,
       "amenities": [
-        "Gym",
-        "Parking",
-        "24/7 Security",
-        "Elevator"
+        "Private Garden",
+        "Terrace",
+        "CCTV Security",
+        "Parking"
       ],
-      "dateAdded": "2025-02-05T09:00:00Z",
+      "images": "https://media.istockphoto.com/id/1415886887/photo/freshly-painted-craftsman-bungalow-house.jpg?s=612x612&w=0&k=20&c=lcwiyJqjUoIM0FfRb3TwV2BzUY8RS7oT9zFmZGv4nLI=",
+      "dateAdded": "2025-02-04T09:00:00Z",
       "agent": {
-        "id": "agent3",
-        "name": "Ravi Mehta",
-        "phone": "09123456780",
-        "email": "ravimehta@example.com"
+        "id": "agent5",
+        "name": "Anil Kapoor",
+        "phone": "09876543211",
+        "email": "anilkapoor@example.com"
       },
-      "neighborhoodDescription": "MG Road is one of the most sought-after areas in Bangalore, offering easy access to major shopping centers, entertainment hubs, and reliable transport. The neighborhood is bustling with cafes, restaurants, and corporate offices.",
+      "neighborhoodDescription": "Jubilee Hills is an upscale neighborhood with excellent schools, hospitals, and recreational options. It’s popular for its peaceful environment and proximity to IT hubs.",
       "availability": "Available for immediate possession",
       "id": 1
     },
     {
-      "title": "Spacious 4-Bedroom House in Chennai",
-      "description": "A large 4-bedroom house with a beautiful garden and outdoor space. Located in a peaceful residential area with easy access to schools, markets, and public transport.",
-      "price": 8000000,
+      "title": "Modern 2-Bedroom Apartment in Mumbai",
+      "description": "A sleek 2-bedroom apartment with modern interiors and excellent amenities. Situated in Bandra, known for its vibrant lifestyle and excellent connectivity.",
+      "price": 12000000,
       "location": {
-        "address": "18 Shanti Nagar",
-        "city": "Chennai",
-        "state": "Tamil Nadu",
-        "zipCode": "600092"
+        "address": "45 Linking Road",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zipCode": "400050"
       },
-      "propertyType": "House",
-      "bedrooms": 4,
-      "bathrooms": 3,
-      "squareFootage": 2500,
+      "propertyType": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFootage": 1100,
       "amenities": [
-        "Private Garden",
-        "Parking",
         "Swimming Pool",
-        "CCTV Security"
+        "Gym",
+        "Parking",
+        "24/7 Security"
       ],
-      "dateAdded": "2025-02-02T10:00:00Z",
+      "images": "https://t4.ftcdn.net/jpg/01/22/80/93/360_F_122809314_qqF2qH028iOn3FC43M0TL40hdXz6B5Mr.jpg",
+      "dateAdded": "2025-02-03T08:30:00Z",
       "agent": {
         "id": "agent4",
-        "name": "Karthik Suresh",
-        "phone": "09123456781",
-        "email": "karthiksuresh@example.com"
+        "name": "Ayesha Khan",
+        "phone": "09876543210",
+        "email": "ayeshakhan@example.com"
       },
-      "neighborhoodDescription": "Shanti Nagar is a quiet, family-friendly neighborhood with plenty of parks and green spaces. The area is known for its proximity to top schools, hospitals, and local markets, offering a perfect balance of convenience and tranquility.",
-      "availability": "Available for immediate possession",
+      "neighborhoodDescription": "Bandra is a thriving neighborhood in Mumbai, known for its cafes, boutiques, and nightlife. It offers excellent connectivity to key business districts and beaches.",
+      "availability": "Available from March 2025",
       "id": 2
     },
     {
-      "title": "Spacious 4-Bedroom House in Chennai",
-      "description": "A large 4-bedroom house with a beautiful garden and outdoor space. Located in a peaceful residential area with easy access to schools, markets, and public transport.",
-      "price": 8000000,
+      "title": "Cozy 1-Bedroom Apartment in Chennai",
+      "description": "A fully furnished 1-bedroom apartment perfect for professionals. Located in Anna Nagar with access to top restaurants and public transport.",
+      "price": 5000000,
       "location": {
-        "address": "18 Shanti Nagar",
+        "address": "12 Gandhi Street",
         "city": "Chennai",
         "state": "Tamil Nadu",
-        "zipCode": "600092"
+        "zipCode": "600040"
+      },
+      "propertyType": "Apartment",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "squareFootage": 700,
+      "amenities": [
+        "Parking",
+        "Elevator",
+        "24/7 Security",
+        "Gym"
+      ],
+      "images": "https://www.shutterstock.com/image-photo/new-modern-block-flats-green-260nw-2501530247.jpg",
+      "dateAdded": "2025-02-02T10:00:00Z",
+      "agent": {
+        "id": "agent6",
+        "name": "Divya Sharma",
+        "phone": "09876543212",
+        "email": "divyasharma@example.com"
+      },
+      "neighborhoodDescription": "Anna Nagar is a family-friendly area with parks, schools, and shopping complexes. It’s well-connected to the rest of Chennai via metro and buses.",
+      "availability": "Available from April 2025",
+      "id": 3
+    },
+    {
+      "title": "Elegant 2-Bedroom Apartment in Kolkata",
+      "description": "A stylish 2-bedroom apartment with modern interiors and panoramic views. Situated in Salt Lake, close to tech hubs and recreational areas.",
+      "price": 7000000,
+      "location": {
+        "address": "Block D, Salt Lake City",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "zipCode": "700064"
+      },
+      "propertyType": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFootage": 1200,
+      "amenities": [
+        "Swimming Pool",
+        "Parking",
+        "24/7 Security",
+        "Children's Play Area"
+      ],
+      "images": "https://www.shutterstock.com/image-photo/new-modern-block-flats-green-600nw-2461052077.jpg",
+      "dateAdded": "2025-02-01T11:00:00Z",
+      "agent": {
+        "id": "agent8",
+        "name": "Rajesh Sen",
+        "phone": "09876543214",
+        "email": "rajeshsen@example.com"
+      },
+      "neighborhoodDescription": "Salt Lake City is a prime residential and commercial hub in Kolkata, offering a perfect mix of tranquility and modern amenities. It’s close to top tech companies and cultural landmarks.",
+      "availability": "Available for immediate possession",
+      "id": 4
+    },
+    {
+      "title": "Premium Office Space in Pune",
+      "description": "A modern office space located in Koregaon Park, perfect for startups and established businesses. Comes with state-of-the-art facilities.",
+      "price": 15000000,
+      "location": {
+        "address": "Plot 22, Koregaon Park",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "zipCode": "411001"
+      },
+      "propertyType": "Office",
+      "bedrooms": 0,
+      "bathrooms": 2,
+      "squareFootage": 2000,
+      "amenities": [
+        "Conference Room",
+        "Parking",
+        "Elevator",
+        "High-Speed Internet"
+      ],
+      "images": "https://watermark.lovepik.com/photo/20211207/large/lovepik-real-estate-sales-office-exterior-picture_501556861.jpg",
+      "dateAdded": "2025-02-06T08:00:00Z",
+      "agent": {
+        "id": "agent7",
+        "name": "Nitin Gupta",
+        "phone": "09876543213",
+        "email": "nitingupta@example.com"
+      },
+      "neighborhoodDescription": "Koregaon Park is Pune’s most sought-after commercial district, known for its luxurious lifestyle, cafes, and IT hubs. It offers easy access to highways and airports.",
+      "availability": "Available for lease starting May 2025",
+      "id": 5
+    },
+    {
+      "title": "Spacious 3-Bedroom Apartment in Delhi",
+      "description": "A beautifully designed 3-bedroom apartment in South Delhi, perfect for families. Close to parks, schools, and metro connectivity.",
+      "price": 18000000,
+      "location": {
+        "address": "10 Hauz Khas Road",
+        "city": "Delhi",
+        "state": "Delhi",
+        "zipCode": "110016"
+      },
+      "propertyType": "Apartment",
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "squareFootage": 1600,
+      "amenities": [
+        "Gym",
+        "Parking",
+        "24/7 Security",
+        "Rooftop Garden"
+      ],
+      "images": "https://media.istockphoto.com/id/1393537665/photo/modern-townhouse-design.jpg?s=612x612&w=0&k=20&c=vgQesOXDRzz0UfOZxmUtE-rFe75YgA9GvkKS8eeeumE=",
+      "dateAdded": "2025-02-02T10:30:00Z",
+      "agent": {
+        "id": "agent9",
+        "name": "Rohan Singh",
+        "phone": "09876543215",
+        "email": "rohansingh@example.com"
+      },
+      "neighborhoodDescription": "Hauz Khas is a trendy and upscale area in Delhi, known for its lush greenery, vibrant nightlife, and historical significance.",
+      "availability": "Available for immediate possession",
+      "id": 6
+    },
+    {
+      "title": "Modern 2-Bedroom Apartment in Ahmedabad",
+      "description": "A stylish 2-bedroom apartment with contemporary design and excellent amenities. Located in Satellite, one of Ahmedabad's most desirable areas.",
+      "price": 8000000,
+      "location": {
+        "address": "12 Satellite Road",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "zipCode": "380015"
+      },
+      "propertyType": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFootage": 1000,
+      "amenities": [
+        "Gym",
+        "Swimming Pool",
+        "Parking",
+        "Children's Play Area"
+      ],
+      "images": "https://t4.ftcdn.net/jpg/06/24/38/33/360_F_624383351_FnBHTtkyT2bfS43b5rs0dYCy9vCLTj0C.jpg",
+      "dateAdded": "2025-02-05T08:30:00Z",
+      "agent": {
+        "id": "agent12",
+        "name": "Nita Shah",
+        "phone": "09876543218",
+        "email": "nitashah@example.com"
+      },
+      "neighborhoodDescription": "Satellite is a thriving neighborhood in Ahmedabad with excellent schools, parks, and shopping complexes. It offers great connectivity to major areas of the city.",
+      "availability": "Available from April 2025",
+      "id": 7
+    },
+    {
+      "title": "Elegant 3-Bedroom Apartment in Kochi",
+      "description": "A spacious 3-bedroom apartment with waterfront views and modern interiors. Located in Marine Drive, one of Kochi's prime localities.",
+      "price": 10000000,
+      "location": {
+        "address": "5 Marine Drive Road",
+        "city": "Kochi",
+        "state": "Kerala",
+        "zipCode": "682031"
+      },
+      "propertyType": "Apartment",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "squareFootage": 1500,
+      "amenities": [
+        "Swimming Pool",
+        "Parking",
+        "24/7 Security",
+        "Gym"
+      ],
+      "images": "https://i0.wp.com/www.ibconstructions.com.au/wp-content/uploads/2019/07/IMG_0623-1-scaled.jpg?fit=800%2C546&ssl=1",
+      "dateAdded": "2025-02-06T10:00:00Z",
+      "agent": {
+        "id": "agent13",
+        "name": "Rahul Nair",
+        "phone": "09876543219",
+        "email": "rahulnair@example.com"
+      },
+      "neighborhoodDescription": "Marine Drive is known for its stunning views of the backwaters, luxury shopping malls, and vibrant cafes. It’s a highly sought-after area in Kochi.",
+      "availability": "Available for immediate possession",
+      "id": 8
+    },
+    {
+      "title": "Charming 4-Bedroom House in Jaipur",
+      "description": "A traditional 4-bedroom house with modern amenities, located in a peaceful neighborhood. Perfect for families looking for space and comfort.",
+      "price": 12000000,
+      "location": {
+        "address": "56 Pink Avenue",
+        "city": "Jaipur",
+        "state": "Rajasthan",
+        "zipCode": "302001"
       },
       "propertyType": "House",
       "bedrooms": 4,
       "bathrooms": 3,
-      "squareFootage": 2500,
+      "squareFootage": 2000,
       "amenities": [
         "Private Garden",
+        "Terrace",
         "Parking",
-        "Swimming Pool",
         "CCTV Security"
       ],
-      "dateAdded": "2025-02-02T10:00:00Z",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQdteWHWSiidcQkCHWhFzk7aJRw7imqcwRjOki7W7v3aHlAjfYpEdboN3QBzN1Q5WHEg4&usqp=CAU",
+      "dateAdded": "2025-02-04T11:00:00Z",
       "agent": {
-        "id": "agent4",
-        "name": "Karthik Suresh",
-        "phone": "09123456781",
-        "email": "karthiksuresh@example.com"
+        "id": "agent11",
+        "name": "Vikram Rathore",
+        "phone": "09876543217",
+        "email": "vikramrathore@example.com"
       },
-      "neighborhoodDescription": "Shanti Nagar is a quiet, family-friendly neighborhood with plenty of parks and green spaces. The area is known for its proximity to top schools, hospitals, and local markets, offering a perfect balance of convenience and tranquility.",
+      "neighborhoodDescription": "Located in the cultural heart of Jaipur, the neighborhood offers proximity to heritage sites, local markets, and excellent schools.",
       "availability": "Available for immediate possession",
-      "id": 3
+      "id": 9
+    },
+    {
+      "title": "Luxury Office Space in Bengaluru",
+      "description": "A premium office space in Whitefield, equipped with state-of-the-art facilities, ideal for IT and corporate firms.",
+      "price": 25000000,
+      "location": {
+        "address": "88 ITPL Main Road",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "zipCode": "560066"
+      },
+      "propertyType": "Office",
+      "bedrooms": 0,
+      "bathrooms": 4,
+      "squareFootage": 3000,
+      "amenities": [
+        "Conference Rooms",
+        "High-Speed Internet",
+        "Cafeteria",
+        "Parking"
+      ],
+      "images": "https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg",
+      "dateAdded": "2025-02-06T09:00:00Z",
+      "agent": {
+        "id": "agent10",
+        "name": "Sunil Menon",
+        "phone": "09876543216",
+        "email": "sunilmenon@example.com"
+      },
+      "neighborhoodDescription": "Whitefield is Bengaluru’s premier IT hub, offering excellent infrastructure, top business parks, and seamless connectivity to the airport.",
+      "availability": "Available for lease starting March 2025",
+      "id": 10
     }
   ]
 }
