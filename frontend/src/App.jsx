@@ -5,6 +5,7 @@ import Signup from './Pages/Signup';
 import Login from './Pages/Login';
 import Home from './Pages/Home';
 import Navbar from './Components/Navbar';
+import PropertyListing from './Pages/PropertyListing';
 
 
 function App() {
@@ -17,8 +18,9 @@ function App() {
       <Navbar/>
       <Routes>
       <Route path="/" element={ <Home />} />
+      <Route path="/propertylisting" element={<PropertyListing/>}/>
       <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login />} />
        
       </Routes>
     
