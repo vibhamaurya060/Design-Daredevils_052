@@ -1,0 +1,97 @@
+{
+  "properties": [
+    {
+      "title": "Modern 1-Bedroom Apartment in Bangalore",
+      "description": "A contemporary 1-bedroom apartment with sleek finishes and a spacious layout. Ideally located near the city center, close to cafes, shopping centers, and metro stations.",
+      "price": 6000000,
+      "location": {
+        "address": "22 MG Road",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "zipCode": "560001"
+      },
+      "propertyType": "Apartment",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "squareFootage": 800,
+      "amenities": [
+        "Gym",
+        "Parking",
+        "24/7 Security",
+        "Elevator"
+      ],
+      "dateAdded": "2025-02-05T09:00:00Z",
+      "agent": {
+        "id": "agent3",
+        "name": "Ravi Mehta",
+        "phone": "09123456780",
+        "email": "ravimehta@example.com"
+      },
+      "neighborhoodDescription": "MG Road is one of the most sought-after areas in Bangalore, offering easy access to major shopping centers, entertainment hubs, and reliable transport. The neighborhood is bustling with cafes, restaurants, and corporate offices.",
+      "availability": "Available for immediate possession",
+      "id": 1
+    },
+    {
+      "title": "Spacious 4-Bedroom House in Chennai",
+      "description": "A large 4-bedroom house with a beautiful garden and outdoor space. Located in a peaceful residential area with easy access to schools, markets, and public transport.",
+      "price": 8000000,
+      "location": {
+        "address": "18 Shanti Nagar",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "zipCode": "600092"
+      },
+      "propertyType": "House",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "squareFootage": 2500,
+      "amenities": [
+        "Private Garden",
+        "Parking",
+        "Swimming Pool",
+        "CCTV Security"
+      ],
+      "dateAdded": "2025-02-02T10:00:00Z",
+      "agent": {
+        "id": "agent4",
+        "name": "Karthik Suresh",
+        "phone": "09123456781",
+        "email": "karthiksuresh@example.com"
+      },
+      "neighborhoodDescription": "Shanti Nagar is a quiet, family-friendly neighborhood with plenty of parks and green spaces. The area is known for its proximity to top schools, hospitals, and local markets, offering a perfect balance of convenience and tranquility.",
+      "availability": "Available for immediate possession",
+      "id": 2
+    },
+    {
+      "title": "Spacious 4-Bedroom House in Chennai",
+      "description": "A large 4-bedroom house with a beautiful garden and outdoor space. Located in a peaceful residential area with easy access to schools, markets, and public transport.",
+      "price": 8000000,
+      "location": {
+        "address": "18 Shanti Nagar",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "zipCode": "600092"
+      },
+      "propertyType": "House",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "squareFootage": 2500,
+      "amenities": [
+        "Private Garden",
+        "Parking",
+        "Swimming Pool",
+        "CCTV Security"
+      ],
+      "dateAdded": "2025-02-02T10:00:00Z",
+      "agent": {
+        "id": "agent4",
+        "name": "Karthik Suresh",
+        "phone": "09123456781",
+        "email": "karthiksuresh@example.com"
+      },
+      "neighborhoodDescription": "Shanti Nagar is a quiet, family-friendly neighborhood with plenty of parks and green spaces. The area is known for its proximity to top schools, hospitals, and local markets, offering a perfect balance of convenience and tranquility.",
+      "availability": "Available for immediate possession",
+      "id": 3
+    }
+  ]
+}
