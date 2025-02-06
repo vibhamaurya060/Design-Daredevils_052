@@ -1,26 +1,49 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../styles/Login.css";
 
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/Login.css'
 const Signup = () => {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ username: "", email: "", password: "" });
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    password: "",
+    role: "",
+  });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSignup = () => {
-    const users = JSON.parse(localStorage.getItem("users")) || {};
-    if (users[form.username]) {
-      alert("User already exists! Try logging in.");
-      return;
+  const handleSignup = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/users");
+      const users = response.data;
+
+      const userExists = users.some(
+        (user) => user.email === form.email || user.username === form.username
+      );
+
+      if (userExists) {
+        alert("User already exists! Try logging in.");
+        return;
+      }
+
+      await axios.post("http://localhost:3000/users", {
+        username: form.username,
+        email: form.email,
+        password: form.password,
+        role: form.role,
+      });
+
+      alert("Signup successful!");
+      navigate("/login");
+    } catch (error) {
+      console.error("Error during signup:", error);
+      alert("Something went wrong! Please try again later.");
     }
-    users[form.username] = { email: form.email, password: form.password };
-    localStorage.setItem("users", JSON.stringify(users));
-    alert("Signup successful!");
-    navigate("/login");
   };
 
   return (
@@ -33,7 +56,7 @@ const Signup = () => {
           value={form.username}
           onChange={handleInputChange}
           placeholder="Username"
-          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         <input
           type="email"
@@ -41,7 +64,7 @@ const Signup = () => {
           value={form.email}
           onChange={handleInputChange}
           placeholder="Email"
-          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         <input
           type="password"
@@ -49,8 +72,20 @@ const Signup = () => {
           value={form.password}
           onChange={handleInputChange}
           placeholder="Password"
-          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
+        <select
+          name="role"
+          value={form.role}
+          onChange={handleInputChange}
+          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+        >
+          <option value="" disabled>
+            Select Role
+          </option>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+        </select>
         <button
           onClick={handleSignup}
           className="bg-violet-400 hover:bg-violet-600 text-white w-full py-2 rounded-lg"

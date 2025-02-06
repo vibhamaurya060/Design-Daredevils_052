@@ -1,7 +1,8 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../styles/Login.css";
 
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/Login.css'
 const Login = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", password: "" });
@@ -11,19 +12,26 @@ const Login = () => {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleLogin = () => {
-    const users = JSON.parse(localStorage.getItem("users")) || {};
-    const user = Object.values(users).find(
-      (user) => user.email === form.email && user.password === form.password
-    );
+  const handleLogin = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/users");
+      const users = response.data;
 
-    if (user) {
-      localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("currentUser", user.email);
-      alert("Login successful!");
-      navigate("/");
-    } else {
-      alert("Invalid credentials! Please try again.");
+      const user = users.find(
+        (user) => user.email === form.email && user.password === form.password
+      );
+
+      if (user) {
+        alert(`Login successful! Role: ${user.role}`);
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("currentUser", JSON.stringify(user));
+        navigate("/");
+      } else {
+        alert("Invalid credentials! Please try again.");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      alert("Something went wrong! Please try again later.");
     }
   };
 
@@ -37,7 +45,7 @@ const Login = () => {
           value={form.email}
           onChange={handleInputChange}
           placeholder="Email"
-          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         <input
           type="password"
@@ -45,7 +53,7 @@ const Login = () => {
           value={form.password}
           onChange={handleInputChange}
           placeholder="Password"
-          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         <button
           onClick={handleLogin}
