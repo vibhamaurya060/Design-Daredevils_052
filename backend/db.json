@@ -323,32 +323,16 @@
   ],
   "users": [
     {
-      "username": "john_doe",
-      "email": "john.doe@example.com",
-      "password": "securePassword123",
-      "role": "user",
-      "id": 1
-    },
-    {
       "username": "vibha",
       "email": "vibha@example.com",
       "password": "123123",
-      "role": "user",
+      "id": 1
+    },
+    {
+      "username": "user",
+      "email": "user@gmail.com",
+      "password": "123123",
       "id": 2
-    },
-    {
-      "username": "test2",
-      "email": "test2@gamil.com",
-      "password": "123123",
-      "role": "user",
-      "id": 3
-    },
-    {
-      "username": "Riya",
-      "email": "riya123@gmail.com",
-      "password": "123123",
-      "role": "admin",
-      "id": 4
     }
   ]
 }
