@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Building2, MapPin, IndianRupee, Bath, Bed, Home, Calendar, Phone, Mail, Square } from 'lucide-react';
-
+import Footer from './Footer';
+import { useNavigate } from 'react-router';
 const PropertyListing = () => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate()
 
   // Filter states
   const [search, setSearch] = useState("");
@@ -45,7 +47,13 @@ const PropertyListing = () => {
     );
   });
 
+
+  // logic for single page
+  function handelSinglePage(id){
+    navigate(`/propertylisting/${id}`)
+  }
   return (
+    <>
     <div className="min-h-screen bg-gradient-to-r from-indigo-100 to-purple-200 p-6">
       <div className="container mx-auto flex flex-col md:flex-row gap-8">
         {/* Sidebar Filters */}
@@ -109,8 +117,8 @@ const PropertyListing = () => {
           {filteredProperties.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProperties.map((property) => (
-                <div key={property.id} className="bg-white p-6 rounded-lg shadow-lg transform transition-all hover:scale-105 hover:shadow-xl">
-                  <img src="/api/placeholder/400/200" alt={property.title} className="w-full h-40 object-cover rounded-lg mb-4" />
+                <div key={property.id} onClick={()=>handelSinglePage(property.id)} className="bg-white p-6 rounded-lg shadow-lg transform transition-all hover:scale-105 hover:shadow-xl">
+                  <img src={property.images} alt={property.title} className="w-full h-40 object-cover rounded-lg mb-4" />
                   <div className="flex flex-col flex-grow">
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">{property.title}</h3>
                     <p className="text-gray-600 flex items-center gap-1 mb-3"><MapPin className="w-4 h-4" /> {property.location.address}, {property.location.city}</p>
@@ -133,7 +141,15 @@ const PropertyListing = () => {
           )}
         </main>
       </div>
-    </div>
+     
+      </div>
+      <div >
+      <Footer/>
+      </div>
+    </>
+    
+      
+   
   );
 };
 
