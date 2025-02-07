@@ -320,5 +320,19 @@
       "availability": "Available for lease starting March 2025",
       "id": 10
     }
+  ],
+  "users": [
+    {
+      "username": "vibha",
+      "email": "vibha@example.com",
+      "password": "123123",
+      "id": 1
+    },
+    {
+      "username": "user",
+      "email": "user@gmail.com",
+      "password": "123123",
+      "id": 2
+    }
   ]
 }
