@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-gray-200 p-8">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 pl-20 gap-20">
+    <footer className="bg-gray-800 text-gray-200 py-4" >
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 pl-20 gap-20 ">
         {/* About Section */}
         <div>
           <h4 className="text-lg font-semibold text-white mb-4">About Us</h4>
