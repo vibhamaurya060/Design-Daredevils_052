@@ -6,8 +6,7 @@ import Login from './Pages/Login';
 import Home from './Pages/Home';
 import Navbar from './Components/Navbar';
 import PropertyListing from './Pages/PropertyListing';
-import ProtectedRoute from './Components/ProtectedRoute';
-import Dashboard from './Pages/Dashboard';
+
 
 function App() {
 
@@ -23,12 +22,7 @@ function App() {
       <Route path="/propertylisting" element={<PropertyListing />} />
      <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
-      <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute role="admin">
-              <Dashboard />
-            </ProtectedRoute>}/>
+    
       </Routes>
     
     </>
