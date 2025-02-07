@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Navbar.css";
 import logo from "../assets/home.png";
 import { FiUser } from "react-icons/fi"; 
@@ -18,31 +17,23 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="nav" >
+    <nav className="nav">
       <div className="flex justify-between items-center max-w-6xl mx-auto">
         <img
-        onClick={()=>navigate('/')}
           src={logo}
           alt="Logo"
           className="w-12 h-12 rounded-full"
-        /> 
-        <div className="space-x-8" style={{width:"43%", display:"flex",alignItems:"center",justifyContent:"center"}}>
-          <div>
-          <NavLink to="/" className=" bg-black hover:bg-white text-white hover:text-black font-bold text-lg" style={{border: "1px solid teal", padding:"5px 15px 5px 15px", borderRadius:"50px", }}>Home</NavLink>
-          </div>
-          <div>
-          <NavLink to="/propertylisting"  className=" bg-black hover:bg-white text-white hover:text-black font-bold text-lg" style={{border: "1px solid teal", padding:"5px 15px 5px 15px", borderRadius:"50px", }} >Property</NavLink>
-
-          </div>
-          <div style={{display:"flex", alignItems:"center"}}>
+        />
+        <div className="space-x-8">
+          <Link to="/" className="hover:underline text-black font-bold text-xl">Home</Link>
+          <Link to="/propertylisting" className="hover:underline">Property</Link>
           {user ? (
-            <div className="relative" >
+            <div className="relative">
               <button
                 onClick={() => setShowProfileMenu(!showProfileMenu)}
-                className=" bg-black hover:bg-white text-white hover:text-black font-bold text-l flex items-center space-x-2"
-                style={{border: "1px solid teal", padding:"5px 15px 5px 15px", borderRadius:"50px", }} 
+                className="hover:underline text-black font-bold text-l flex items-center space-x-2"
               >
-                <FiUser className="w-6 h-6 rounded-3xl border-2 border-white hover:border-2 hover:border-black" />
+                <FiUser className="w-6 h-6" />
                 <span>{user.username}</span>
               </button>
               {showProfileMenu && (
@@ -68,14 +59,11 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className=" bg-black hover:bg-white text-white hover:text-black font-bold text-l flex items-center space-x-2"
-              style={{border: "1px solid teal", padding:"5px 15px 5px 15px", borderRadius:"50px", }}
+              className="hover:underline text-black font-bold text-l"
             >
               Log in
             </Link>
           )}
-          </div>
-          
         </div>
       </div>
     </nav>

@@ -7,9 +7,9 @@ import Login from './Pages/Login';
 import Navbar from './Components/Navbar';
 import PropertyListing from './Pages/PropertyListing';
 import SinglePageDetails from './Pages/SinglePageDetails.jsx'
-import Home from './Pages/Home ';
+import Home from './Pages/Home.jsx';
 import ForgotPassword from './Pages/ForgotPassword.jsx'
-import Dashboard from './Pages/Dashboard.jsx';
+
 import PrivateRoutes from './routes/PrivateRoutes.jsx';
 // import PrivateRoutes from "./routes/PrivateRoutes.jsx"
 
@@ -25,12 +25,7 @@ function App() {
       <Route path="/propertylisting" element={<PrivateRoutes><PropertyListing/></PrivateRoutes>}/>
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
-      <Route
-          path="/dashboard"
-          element={
-            
-              <Dashboard />
-          }/>
+   
 
       {/* Shivam Page */}
       <Route path="/" element={<Home />} />

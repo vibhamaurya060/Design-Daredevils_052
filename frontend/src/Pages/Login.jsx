@@ -30,7 +30,7 @@ const Login = () => {
       if (user) {
         // Log in the user
         login(user);
-         localStorage.setItem('logedin',"true")
+
         alert(`Login successful!`);
         navigate("/");
       } else {
