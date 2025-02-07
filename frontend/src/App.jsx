@@ -6,12 +6,14 @@ import Login from './Pages/Login';
 
 import Navbar from './Components/Navbar';
 import PropertyListing from './Pages/PropertyListing';
+
 import SinglePageDetails from './Pages/SinglePageDetails.jsx'
 import Home from './Pages/Home.jsx';
 import ForgotPassword from './Pages/ForgotPassword.jsx'
 
 import PrivateRoutes from './routes/PrivateRoutes.jsx';
 // import PrivateRoutes from "./routes/PrivateRoutes.jsx"
+
 
 function App() {
 
@@ -25,6 +27,7 @@ function App() {
       <Route path="/propertylisting" element={<PrivateRoutes><PropertyListing/></PrivateRoutes>}/>
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
+
    
 
       {/* Shivam Page */}
@@ -33,6 +36,7 @@ function App() {
      
       <Route path="/:id" element={<SinglePageDetails />} />
       <Route path="/propertylisting/:id" element={<SinglePageDetails />} />
+
       </Routes>
     
 </>
