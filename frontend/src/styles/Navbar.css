@@ -1,6 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .active{
+   color:white;
+   background-color: darkorchid;
+  }
 .nav{
-    background-image: linear-gradient(#c6c1ff, #ded8f8);
+    
+    background-color:#404d5e;
     padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 

@@ -1,39 +1,61 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../styles/Login.css";
 
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/Login.css'
 const Signup = () => {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ username: "", email: "", password: "" });
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState(""); // Track signup errors
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSignup = () => {
-    const users = JSON.parse(localStorage.getItem("users")) || {};
-    if (users[form.username]) {
-      alert("User already exists! Try logging in.");
-      return;
+  const handleSignup = async () => {
+    setError("");
+    try {
+      
+      const response = await axios.get("http://localhost:3000/users");
+      const users = response.data;
+
+      const userExists = users.some(
+        (user) => user.email === form.email || user.username === form.username
+      );
+
+      if (userExists) {
+        setError("User already exists! Try logging in.");
+        return;
+      }
+
+      // Add the new user to the database
+      await axios.post("http://localhost:3000/users", form);
+
+      alert("Signup successful! You can now log in.");
+      navigate("/login");
+    } catch (error) {
+      console.error("Error during signup:", error);
+      setError("Something went wrong! Please try again later.");
     }
-    users[form.username] = { email: form.email, password: form.password };
-    localStorage.setItem("users", JSON.stringify(users));
-    alert("Signup successful!");
-    navigate("/login");
   };
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="p-6 w-96 signup shadow-lg rounded-lg">
         <h1 className="text-2xl font-bold text-center mb-4">Sign Up</h1>
+        {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
         <input
           type="text"
           name="username"
           value={form.username}
           onChange={handleInputChange}
           placeholder="Username"
-          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         <input
           type="email"
@@ -41,7 +63,7 @@ const Signup = () => {
           value={form.email}
           onChange={handleInputChange}
           placeholder="Email"
-          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         <input
           type="password"
@@ -49,7 +71,7 @@ const Signup = () => {
           value={form.password}
           onChange={handleInputChange}
           placeholder="Password"
-          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
         />
         <button
           onClick={handleSignup}
