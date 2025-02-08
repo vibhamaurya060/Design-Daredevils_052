@@ -34,7 +34,7 @@ const AdminDashboard = () => {
   // Fetch properties from JSON server
   const fetchProperties = async () => {
     try {
-      const response = await fetch('http://localhost:3000/properties');
+      const response = await fetch('https://design-daredevils-052.onrender.com/properties');
       const data = await response.json();
       setProperties(data);
     } catch (error) {
@@ -45,7 +45,7 @@ const AdminDashboard = () => {
   // Create property
   const handleCreateProperty = async (newProperty) => {
     try {
-      const response = await fetch('http://localhost:3000/properties', {
+      const response = await fetch('https://design-daredevils-052.onrender.com/properties', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ const AdminDashboard = () => {
   // Update property
 const handleUpdateProperty = async (id, updatedProperty) => {
   try {
-    const response = await fetch(`http://localhost:3000/properties/${id}`, {
+    const response = await fetch(`https://design-daredevils-052.onrender.com/properties/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -102,7 +102,7 @@ const handleUpdateProperty = async (id, updatedProperty) => {
   // Delete property
   const handleDeleteProperty = async (id) => {
     try {
-      await fetch(`http://localhost:3000/properties/${id}`, {
+      await fetch(`https://design-daredevils-052.onrender.com/properties/${id}`, {
         method: 'DELETE',
       });
       setProperties(properties.filter(prop => prop.id !== id));

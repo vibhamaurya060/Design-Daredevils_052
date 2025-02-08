@@ -7,13 +7,16 @@ import {
   Trash2, 
   Plus 
 } from 'lucide-react';
+import { useNavigate } from 'react-router';
 
 // Sidebar Component
 const Sidebar = ({ activeSection, setActiveSection }) => {
+const navigate = useNavigate()
+let name = localStorage.getItem('AdminName')
   return (
     <div className="w-64 bg-gray-800 text-white p-4">
       <div className="mb-10 text-center">
-        <h1 className="text-2xl font-bold">Property Admin</h1>
+        <h1 className="text-2xl font-bold">Hii👋, Admin {name}</h1>
       </div>
       <nav>
         <ul>
@@ -31,9 +34,13 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
           </li>
           <li 
             className="p-3 cursor-pointer flex items-center hover:bg-gray-700 mt-auto"
-            onClick={() => alert('Logout functionality to be implemented')}
+            onClick={()=>{
+              localStorage.removeItem('AdminName')
+              navigate('/admin')
+
+            }}
           >
-            <LogOut className="mr-3" /> Logout
+            <LogOut className="mr-3"/> Logout
           </li>
         </ul>
       </nav>

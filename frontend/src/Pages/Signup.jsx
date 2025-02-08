@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/Login.css";
+import Navbar from "../Components/Navbar";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Signup = () => {
     setError("");
     try {
       
-      const response = await axios.get("http://localhost:3000/users");
+      const response = await axios.get("https://design-daredevils-052.onrender.com/users");
       const users = response.data;
 
       const userExists = users.some(
@@ -34,7 +35,7 @@ const Signup = () => {
       }
 
       // Add the new user to the database
-      await axios.post("http://localhost:3000/users", form);
+      await axios.post("https://design-daredevils-052.onrender.com/users", form);
 
       alert("Signup successful! You can now log in.");
       navigate("/login");
@@ -45,6 +46,8 @@ const Signup = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="p-6 w-96 signup shadow-lg rounded-lg">
         <h1 className="text-2xl font-bold text-center mb-4">Sign Up</h1>
@@ -87,6 +90,9 @@ const Signup = () => {
         </p>
       </div>
     </div>
+    
+    </>
+    
   );
 };
 

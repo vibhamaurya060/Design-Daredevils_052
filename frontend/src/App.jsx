@@ -4,7 +4,7 @@ import './App.css'
 import Signup from './Pages/Signup';
 import Login from './Pages/Login';
 
-import Navbar from './Components/Navbar';
+
 import PropertyListing from './Pages/PropertyListing';
 
 import SinglePageDetails from './Pages/SinglePageDetails.jsx'
@@ -13,6 +13,8 @@ import ForgotPassword from './Pages/ForgotPassword.jsx'
 
 import PrivateRoutes from './routes/PrivateRoutes.jsx';
 import AdminDashboard from './Admin/AdminDashboard';
+import PageNotFound from './Pages/PageNotFound.jsx';
+import Admin from './Pages/Admin.jsx';
 // import PrivateRoutes from "./routes/PrivateRoutes.jsx"
 
 
@@ -22,7 +24,7 @@ function App() {
   return (
 <>
 {/* <p>Frontend</p> */}
-<Navbar />
+
       <Routes>
   
       <Route path="/propertylisting" element={<PrivateRoutes><PropertyListing/></PrivateRoutes>}/>
@@ -34,16 +36,17 @@ function App() {
       {/* Shivam Page */}
       <Route path="/" element={<Home />} />
       <Route path="/forgot-password" element={<ForgotPassword />} /> 
-     
-      <Route path="/:id" element={<SinglePageDetails />} />
+      <Route path='/adminDashboard' element={<AdminDashboard/>} />
+      <Route path='/admin' element={<Admin/>}/>
+      
+      <Route path='*' element={<PageNotFound/>}/>
+      <Route path="/details/:id" element={<SinglePageDetails />} />
       <Route path="/propertylisting/:id" element={<SinglePageDetails />} />
-
+     
       </Routes>
-    <AdminDashboard/>
-</>
-      
-      
     
+</>
+   
   )
 }
 

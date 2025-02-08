@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Footer from './Footer';
 import { useEffect, useRef, useState } from "react";
+import Navbar from "../Components/Navbar";
 function Home() {
 const swiperRef = useRef(null);
 
@@ -24,7 +25,7 @@ const [data, setData] = useState([])
 
   function singlePage(id){
     // e.stopPropagation();
-navigate(`/${id}`)
+navigate(`/details/${id}`)
 
   }
 
@@ -36,6 +37,9 @@ navigate(`/${id}`)
   };
 
    return (
+
+    <>
+    <Navbar/>
     <div className="homepage " >
       
       
@@ -122,6 +126,8 @@ navigate(`/${id}`)
 
     <Footer/>
     </div>
+    </>
+    
     
   );
 }

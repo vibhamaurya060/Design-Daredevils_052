@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/SinglePageDetails.css"; // Import CSS file
+import Navbar from "../Components/Navbar";
 
 const SinglePageDetails = () => {
   const [data, setData] = useState(null);
@@ -30,6 +31,8 @@ const SinglePageDetails = () => {
   if (error) return <div className="error">{error}</div>;
 
   return (
+    <>
+    <Navbar/>
     <div className="container1">
       {/* Property Card */}
       <div className="property-card1">
@@ -71,6 +74,8 @@ const SinglePageDetails = () => {
         </div>
       </div>
     </div>
+    </>
+    
   );
 };
 

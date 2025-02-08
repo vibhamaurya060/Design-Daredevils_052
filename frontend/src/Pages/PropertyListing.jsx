@@ -3,6 +3,7 @@ import { Building2, MapPin, IndianRupee, Bath, Bed, Home, Calendar, Phone, Mail,
 import Footer from './Footer';
 import { useNavigate } from 'react-router';
 import '../styles/Footer.css'
+import Navbar from '../Components/Navbar';
 
 const PropertyListing = () => {
   const [properties, setProperties] = useState([]);
@@ -18,7 +19,7 @@ const PropertyListing = () => {
   const [filterBedrooms, setFilterBedrooms] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/properties")
+    fetch("https://design-daredevils-052.onrender.com/properties")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch properties");
@@ -56,6 +57,7 @@ const PropertyListing = () => {
   }
   return (
     <>
+    <Navbar/>
     <div className="min-h-screen bg-gradient-to-r from-indigo-100 to-purple-200 p-6">
       <div className="container mx-auto flex flex-col md:flex-row gap-8">
         {/* Sidebar Filters */}

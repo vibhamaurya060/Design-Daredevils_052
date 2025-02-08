@@ -1,48 +1,58 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/Login.css";
 import { useAuth } from "../Context/AuthContext";
+import Navbar from "../Components/Navbar";
 
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth(); // Use the login function from AuthContext
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState(""); // Track login errors
-
+ const [loginData, setLoginData] = useState([]);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleLogin = async () => {
-    setError(""); 
-    try {
-      // Fetch users from JSON server
-      const response = await axios.get("http://localhost:3000/users");
-      const users = response.data;
 
-      // Check if a user matches the provided credentials
-      const user = users.find(
-        (u) => u.email === form.email && u.password === form.password
-      );
+useEffect(()=>{
+async function fetchData(){
+  const response = await axios.get("https://design-daredevils-052.onrender.com/users");
+  const data= await response.data;
+  setLoginData(data)
+}
+fetchData()
+},[])
 
-      if (user) {
-        // Log in the user
-        login(user);
+    const handleLogin = async () => {
+      setError(""); 
+      
+     
+  
+        // Check if a user matches the provided credentials
+        const user = loginData.find(
+          (u) => u.email === form.email && u.password === form.password
+        );
+  
+        if (user) {
+          // Log in the user
+          login(user);
+  
+          alert(`Login successful!`);
+          navigate("/");
+        } else {
+          setError("Invalid email or password! Please try again.");
+        }
+     
+    };
 
-        alert(`Login successful!`);
-        navigate("/");
-      } else {
-        setError("Invalid email or password! Please try again.");
-      }
-    } catch (error) {
-      console.error("Error during login:", error);
-      setError("Something went wrong! Please try again later.");
-    }
-  };
 
+  
   return (
+    <>
+    <Navbar/>
     <div className="flex items-center justify-center h-screen bg-gray-100 ">
       <div className="p-6 w-96 login shadow-lg rounded-lg">
         <h1 className="text-2xl font-bold text-center mb-4">Log in</h1>
@@ -77,6 +87,9 @@ const Login = () => {
         </p>
       </div>
     </div>
+    
+    </>
+    
   );
 };
 

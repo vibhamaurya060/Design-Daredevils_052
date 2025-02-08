@@ -6,8 +6,9 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null); 
   const [bool, setBool] = useState(false);
   const login = (userData) => {
-    setUser(userData);
-   setBool(true)
+  setUser(userData);
+  
+  setBool(true)
   };
 
   const logout = () => {
