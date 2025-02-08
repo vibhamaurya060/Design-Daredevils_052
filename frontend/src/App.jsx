@@ -12,6 +12,7 @@ import Home from './Pages/Home.jsx';
 import ForgotPassword from './Pages/ForgotPassword.jsx'
 
 import PrivateRoutes from './routes/PrivateRoutes.jsx';
+import AdminDashboard from './Admin/AdminDashboard';
 // import PrivateRoutes from "./routes/PrivateRoutes.jsx"
 
 
@@ -38,7 +39,7 @@ function App() {
       <Route path="/propertylisting/:id" element={<SinglePageDetails />} />
 
       </Routes>
-    
+    <AdminDashboard/>
 </>
       
       

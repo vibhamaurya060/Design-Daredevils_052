@@ -1,9 +1,7 @@
 .footer{
     width: 100%;
     height: 20vh;
-    background-image: linear-gradient(#c6c1ff, #ded8f8);
-    padding: 1.4rem;
-    
+   
 }
 
 @media (max-width: 768px) {
