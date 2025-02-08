@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Building2, MapPin, IndianRupee, Bath, Bed, Home, Calendar, Phone, Mail, Square } from 'lucide-react';
 import Footer from './Footer';
 import { useNavigate } from 'react-router';
+import '../styles/Footer.css'
+
 const PropertyListing = () => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);

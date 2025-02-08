@@ -21,14 +21,12 @@
         "Parking"
       ],
       "images": "https://media.istockphoto.com/id/1415886887/photo/freshly-painted-craftsman-bungalow-house.jpg?s=612x612&w=0&k=20&c=lcwiyJqjUoIM0FfRb3TwV2BzUY8RS7oT9zFmZGv4nLI=",
-      "dateAdded": "2025-02-04T09:00:00Z",
       "agent": {
         "id": "agent5",
         "name": "Anil Kapoor",
-        "phone": "09876543211",
+        "phone": "+9876543211",
         "email": "anilkapoor@example.com"
       },
-      "neighborhoodDescription": "Jubilee Hills is an upscale neighborhood with excellent schools, hospitals, and recreational options. It’s popular for its peaceful environment and proximity to IT hubs.",
       "availability": "Available for immediate possession",
       "id": 1
     },
@@ -53,14 +51,12 @@
         "24/7 Security"
       ],
       "images": "https://t4.ftcdn.net/jpg/01/22/80/93/360_F_122809314_qqF2qH028iOn3FC43M0TL40hdXz6B5Mr.jpg",
-      "dateAdded": "2025-02-03T08:30:00Z",
       "agent": {
         "id": "agent4",
         "name": "Ayesha Khan",
         "phone": "09876543210",
         "email": "ayeshakhan@example.com"
       },
-      "neighborhoodDescription": "Bandra is a thriving neighborhood in Mumbai, known for its cafes, boutiques, and nightlife. It offers excellent connectivity to key business districts and beaches.",
       "availability": "Available from March 2025",
       "id": 2
     },
@@ -294,7 +290,7 @@
       "price": 25000000,
       "location": {
         "address": "88 ITPL Main Road",
-        "city": "Bengaluru",
+        "city": "Bangalore",
         "state": "Karnataka",
         "zipCode": "560066"
       },
@@ -309,16 +305,74 @@
         "Parking"
       ],
       "images": "https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg",
-      "dateAdded": "2025-02-06T09:00:00Z",
       "agent": {
         "id": "agent10",
         "name": "Sunil Menon",
         "phone": "09876543216",
         "email": "sunilmenon@example.com"
       },
-      "neighborhoodDescription": "Whitefield is Bengaluru’s premier IT hub, offering excellent infrastructure, top business parks, and seamless connectivity to the airport.",
       "availability": "Available for lease starting March 2025",
       "id": 10
+    },
+    {
+      "title": "Modern Apartment in Bangalore",
+      "description": "A luxurious 2-bedroom apartment with contemporary interiors and a stunning city view. Located in Koramangala, close to IT hubs.",
+      "price": 12000000,
+      "location": {
+        "address": "15 Green Valley Road",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "zipCode": "560034"
+      },
+      "propertyType": "Apartment",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "squareFootage": 1200,
+      "amenities": [
+        "Swimming Pool",
+        "Gymnasium",
+        "Clubhouse",
+        "24/7 Security"
+      ],
+      "images": "https://static.vecteezy.com/system/resources/previews/027/717/450/non_2x/sale-of-new-apartments-in-a-residential-complex-generative-ai-photo.jpg",
+      "agent": {
+        "id": "",
+        "name": "Priya Sharma",
+        "phone": "09876543212",
+        "email": "priyasharma@example.com"
+      },
+      "availability": "Ready for occupancy",
+      "id": 11
+    },
+    {
+      "title": "Elegant 4-Bedroom Home in Pune",
+      "description": "A spacious and stylish 4-bedroom home with modern interiors and a landscaped garden. Located in the peaceful Koregaon Park area.",
+      "price": 18000000,
+      "location": {
+        "address": "45 Green Meadows Lane",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "zipCode": "411001"
+      },
+      "propertyType": "Home",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "squareFootage": 2800,
+      "amenities": [
+        "Landscaped Garden",
+        "Modular Kitchen",
+        "Home Automation",
+        "2-Car Garage"
+      ],
+      "images": "https://5.imimg.com/data5/SELLER/Default/2023/2/AZ/HM/IT/100751580/house-architectural-designing-services-500x500.jpg",
+      "agent": {
+        "id": "",
+        "name": "Aarti Desai",
+        "phone": "+919812345678\"",
+        "email": "aarti.desai@gmail.com"
+      },
+      "availability": "Available for immediate possession",
+      "id": 12
     }
   ],
   "users": [
