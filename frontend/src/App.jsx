@@ -38,10 +38,10 @@ function App() {
       <Route path='/adminDashboard' element={<AdminDashboard/>} />
       <Route path='/admin' element={<Admin/>}/>
       
-      <Route path='*' element={<PageNotFound/>}/>
+     
       <Route path="/details/:id" element={<SinglePageDetails />} />
       <Route path="/propertylisting/:id" element={<SinglePageDetails />} />
-     
+      <Route path='*' element={<PageNotFound/>}/>
       </Routes>
     
 </>
