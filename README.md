@@ -27,6 +27,7 @@ Dreamhouse.com is a property listing website where users can find homes ranging 
 - **Vibha Maurya (Team Lead)**
   - Developed **Login & Register** functionality.
   - Created **Navbar** and **Admin Dashboard**.
+  - Worked on **Responsive Design**.
 
 - **Shivam Kumar Singh**
   - Built **Home Page** and **Single Property Page**.
