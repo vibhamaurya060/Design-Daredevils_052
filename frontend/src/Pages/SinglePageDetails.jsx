@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "../styles/SinglePageDetails.css"; // Import CSS file
+import "../styles/SinglePageDetails.css"; 
 import Navbar from "../Components/Navbar";
 
 const SinglePageDetails = () => {

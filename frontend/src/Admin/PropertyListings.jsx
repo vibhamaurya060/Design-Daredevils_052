@@ -47,7 +47,7 @@ const PropertyListings = ({
       alert("Please fill in required fields.");
       return;
     }
-  
+
     const formattedProperty = {
       ...propertyForm,
       price: Number(propertyForm.price),
@@ -56,16 +56,16 @@ const PropertyListings = ({
       squareFootage: Number(propertyForm.squareFootage),
       amenities: propertyForm.amenities.split(",").map((item) => item.trim()),
     };
-  
+
     if (editingProperty) {
       onUpdateProperty(editingProperty.id, formattedProperty);
     } else {
       onCreateProperty(formattedProperty);
     }
-  
+
     resetForm();
   };
-  
+
   const resetForm = () => {
     setEditingProperty(null);
     setPropertyForm({
@@ -116,7 +116,7 @@ const PropertyListings = ({
     <div className="p-6">
       {/* Form Section */}
       <div className="bg-white shadow-md rounded-lg p-6 mb-6">
-        <h2 className="text-xl font-semibold mb-4">
+        <h2 className="text-xl text-center font-bold mb-4 mt-6">
           {editingProperty ? "Edit Property" : "Add New Property"}
         </h2>
         <div className="grid grid-cols-2 gap-4">
@@ -261,51 +261,108 @@ const PropertyListings = ({
 
       {/* Property Listings Section */}
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        <table className="w-full">
-          <thead className="bg-gray-200">
-            <tr>
-              <th className="p-3 text-left">Image</th>
-              <th className="p-3 text-left">Title</th>
-              <th className="p-3 text-left">Location</th>
-              <th className="p-3 text-left">Price</th>
-              <th className="p-3 text-left">Agent Email</th>
-              <th className="p-3 text-right">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {properties.map((property) => (
-              <tr key={property.id} className="border-b hover:bg-gray-100">
-                <td className="p-3">
-                  <img
-                    src={property.images}
-                    alt={property.title}
-                    className="w-20 h-20 object-cover rounded"
-                  />
-                </td>
-                <td className="p-3">{property.title}</td>
-                <td className="p-3">
-                  {property.location.address}, {property.location.city}
-                </td>
-                <td className="p-3">₹{property.price.toLocaleString()}</td>
-                <td className="p-3">{property.agent.email}</td>
-                <td className="p-3 text-right">
-                  <button
-                    onClick={() => handleEdit(property)}
-                    className="text-blue-500 hover:text-blue-700 mr-3"
-                  >
-                    <Pencil size={20} />
-                  </button>
-                  <button
-                    onClick={() => onDeleteProperty(property.id)}
-                    className="text-red-500 hover:text-red-700"
-                  >
-                    <Trash2 size={20} />
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {/* Desktop and Tablet Table View */}
+        <div className="hidden sm:block">
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead className="bg-gray-200">
+                <tr>
+                  <th className="p-3 text-left">Image</th>
+                  <th className="p-3 text-left">Title</th>
+                  <th className="p-3 text-left hidden lg:table-cell">Location</th>
+                  <th className="p-3 text-left">Price</th>
+                  <th className="p-3 text-left hidden xl:table-cell">Agent Email</th>
+                  <th className="p-3 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {properties.map((property) => (
+                  <tr key={property.id} className="border-b hover:bg-gray-100">
+                    <td className="p-3">
+                      <img
+                        src={property.images}
+                        alt={property.title}
+                        className="w-16 h-16 md:w-20 md:h-20 object-cover rounded"
+                      />
+                    </td>
+                    <td className="p-3">
+                      <div className="font-medium">{property.title}</div>
+                      <div className="text-sm text-gray-600 lg:hidden">
+                        {property.location.city}
+                      </div>
+                      <div className="text-sm text-gray-600 xl:hidden">
+                        {property.agent.email}
+                      </div>
+                    </td>
+                    <td className="p-3 hidden lg:table-cell">
+                      {property.location.address}, {property.location.city}
+                    </td>
+                    <td className="p-3">₹{property.price.toLocaleString()}</td>
+                    <td className="p-3 hidden xl:table-cell">{property.agent.email}</td>
+                    <td className="p-3 text-right">
+                      <div className="flex justify-end gap-2">
+                        <button
+                          onClick={() => handleEdit(property)}
+                          className="text-blue-500 hover:text-blue-700 p-1"
+                        >
+                          <Pencil size={20} />
+                        </button>
+                        <button
+                          onClick={() => onDeleteProperty(property.id)}
+                          className="text-red-500 hover:text-red-700 p-1"
+                        >
+                          <Trash2 size={20} />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Mobile Card View */}
+        <div className="sm:hidden space-y-4 p-4">
+          {properties.map((property) => (
+            <div
+              key={property.id}
+              className="border rounded-lg p-4 space-y-3 hover:bg-gray-50"
+            >
+              <div className="flex gap-4">
+                <img
+                  src={property.images}
+                  alt={property.title}
+                  className="w-20 h-20 object-cover rounded"
+                />
+                <div className="flex-1">
+                  <h3 className="font-medium">{property.title}</h3>
+                  <p className="text-sm text-gray-600">
+                    {property.location.address}, {property.location.city}
+                  </p>
+                  <p className="text-lg font-semibold mt-1">
+                    ₹{property.price.toLocaleString()}
+                  </p>
+                  <p className="text-sm text-gray-600">{property.agent.email}</p>
+                </div>
+              </div>
+              <div className="flex justify-end space-x-3 pt-2 border-t">
+                <button
+                  onClick={() => handleEdit(property)}
+                  className="text-blue-500 hover:text-blue-700 p-2"
+                >
+                  <Pencil size={20} />
+                </button>
+                <button
+                  onClick={() => onDeleteProperty(property.id)}
+                  className="text-red-500 hover:text-red-700 p-2"
+                >
+                  <Trash2 size={20} />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
