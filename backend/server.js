@@ -7,7 +7,7 @@ const port=process.env.PORT || 3000;
 
 const frontendUrl =[
   'http://localhost:5173', 
-  'https://design-daredevils-052-3fnc.vercel.app'
+  'https://design-daredevils-052.vercel.app'
 
 ] 
 
