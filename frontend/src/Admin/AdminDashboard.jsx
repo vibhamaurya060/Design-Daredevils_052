@@ -3,28 +3,13 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from './Sidebar';
 import Dashboard from './Dashboard';
 import PropertyListings from './PropertyListings';
+import { FiMenu, FiX } from 'react-icons/fi';
 
-// // Initial property data
-// const initialProperties = [
-//     {
-//       id: 1,
-//       title: "Luxury 3-Bedroom House in Hyderabad",
-//       location: {
-//         address: "33 Banjara Avenue",
-//         city: "Hyderabad",
-//         state: "Telangana",
-//         zipCode: "500033"
-//       },
-//       price: 20000000,
-//       propertyType: "House",
-//       images: "https://media.istockphoto.com/id/1415886887/photo/freshly-painted-craftsman-bungalow-house.jpg?s=612x612&w=0&k=20&c=lcwiyJqjUoIM0FfRb3TwV2BzUY8RS7oT9zFmZGv4nLI="
-//     }
-//   ];
-
-  // Main Admin Dashboard
+// Main Admin Dashboard
 const AdminDashboard = () => {
   const [activeSection, setActiveSection] = useState('dashboard');
   const [properties, setProperties] = useState([]);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Fetch properties on component mount
   useEffect(() => {
@@ -59,45 +44,26 @@ const AdminDashboard = () => {
     }
   };
 
-  // // Update property
-  // const handleUpdateProperty = async (updatedProperty) => {
-  //   try {
-  //     const response = await fetch(`http://localhost:3000/properties/${updatedProperty.id}`, {
-  //       method: 'PUT',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(updatedProperty),
-  //     });
-  //     const updated = await response.json();
-  //     setProperties(properties.map(prop => 
-  //       prop.id === updated.id ? updated : prop
-  //     ));
-  //   } catch (error) {
-  //     console.error('Error updating property:', error);
-  //   }
-  // };
-
   // Update property
-const handleUpdateProperty = async (id, updatedProperty) => {
-  try {
-    const response = await fetch(`https://design-daredevils-052.onrender.com/properties/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedProperty),
-    });
-    const updated = await response.json();
-    setProperties((prevProperties) =>
-      prevProperties.map((prop) =>
-        prop.id === id ? { ...prop, ...updatedProperty } : prop
-      )
-    );
-  } catch (error) {
-    console.error("Error updating property:", error);
-  }
-};
+  const handleUpdateProperty = async (id, updatedProperty) => {
+    try {
+      const response = await fetch(`https://design-daredevils-052.onrender.com/properties/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedProperty),
+      });
+      const updated = await response.json();
+      setProperties((prevProperties) =>
+        prevProperties.map((prop) =>
+          prop.id === id ? { ...prop, ...updatedProperty } : prop
+        )
+      );
+    } catch (error) {
+      console.error("Error updating property:", error);
+    }
+  };
 
   // Delete property
   const handleDeleteProperty = async (id) => {
@@ -112,26 +78,62 @@ const handleUpdateProperty = async (id, updatedProperty) => {
   };
 
   return (
-    <div className="flex h-screen">
-      <Sidebar 
-        activeSection={activeSection} 
-        setActiveSection={setActiveSection} 
-      />
-      
-      <div className="flex-1 bg-gray-100 p-6 overflow-y-auto">
-        <div className="container mx-auto">
-          {activeSection === 'dashboard' && (
-            <Dashboard properties={properties} />
-          )}
-          
-          {activeSection === 'properties' && (
-            <PropertyListings 
-              properties={properties}
-              onCreateProperty={handleCreateProperty}
-              onUpdateProperty={handleUpdateProperty}
-              onDeleteProperty={handleDeleteProperty}
-            />
-          )}
+    <div className='relative'>
+
+      <div className="flex h-screen">
+
+        {/* Top Navbar */}
+        <nav className='h-16 bg-gray-800 fixed top-0 right-0 left-0 flex items-center px-4 md:px-6 z-20'>
+          <button
+            className='text-white md:hidden'
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          >
+            {isSidebarOpen ? <FiX /> : <FiMenu />}
+          </button>
+          <h1 className='text-white font-semibold text-lg ml-6'>Admin Dashboard</h1>
+        </nav>
+
+        {/* Sidebar */}
+        <div
+          className={`
+            fixed inset-y-0 left-0 z-30 bg-gray-800 text-white p-4 w-64 transform
+            ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+            transition-transform duration-300 md:translate-x-0 md:static
+          `}
+        >
+          <Sidebar
+            activeSection={activeSection}
+            setActiveSection={(section) => {
+              setActiveSection(section);
+              setIsSidebarOpen(false);
+            }}
+          />
+        </div>
+
+        {/* Overlay for small screens */}
+        {isSidebarOpen && (
+          <div
+            className="fixed inset-0 bg-black opacity-50 z-20 md:hidden"
+            onClick={() => setIsSidebarOpen(false)}
+          ></div>
+        )}
+
+        {/* Main Content */}
+        <div className="flex-1 bg-gray-100 p-6 overflow-y-auto">
+          <div className="container mx-auto">
+            {activeSection === 'dashboard' && (
+              <Dashboard properties={properties} />
+            )}
+
+            {activeSection === 'properties' && (
+              <PropertyListings
+                properties={properties}
+                onCreateProperty={handleCreateProperty}
+                onUpdateProperty={handleUpdateProperty}
+                onDeleteProperty={handleDeleteProperty}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

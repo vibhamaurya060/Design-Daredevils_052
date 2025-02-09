@@ -11,7 +11,7 @@ const Signup = () => {
     email: "",
     password: "",
   });
-  const [error, setError] = useState(""); // Track signup errors
+  const [error, setError] = useState(""); 
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -23,7 +23,7 @@ const Signup = () => {
     try {
       
       const response = await axios.get("https://design-daredevils-052.onrender.com/users");
-      const users = response.data;
+      const users =await response.data;
 
       const userExists = users.some(
         (user) => user.email === form.email || user.username === form.username

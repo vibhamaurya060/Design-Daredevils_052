@@ -20,7 +20,6 @@ import Admin from './Pages/Admin.jsx';
 
 function App() {
 
-
   return (
 <>
 {/* <p>Frontend</p> */}
