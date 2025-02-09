@@ -11,7 +11,7 @@ const Signup = () => {
     email: "",
     password: "",
   });
-  const [error, setError] = useState(""); 
+  const [error, setError] = useState(""); // Track signup errors
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,12 +35,12 @@ const Signup = () => {
       }
 
       // Add the new user to the database
-      await axios.post("https://design-daredevils-052.onrender.com/users", form);
-       console.log(response);
+      await axios.post("https://design-daredevils-052.onrender.com/users",form);
+
       alert("Signup successful! You can now log in.");
       navigate("/login");
     } catch (error) {
-      console.error("Error during signup:", error);
+      console.log("Error during signup:", error);
       setError("Something went wrong! Please try again later.");
     }
   };
