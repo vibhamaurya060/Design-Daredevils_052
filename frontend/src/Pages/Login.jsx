@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { data, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/Login.css";
 import { useAuth } from "../Context/AuthContext";
@@ -22,9 +22,12 @@ const Login = () => {
       const response = await axios.get("https://design-daredevils-052.onrender.com/users");
       const data = await response.data;
       setLoginData(data)
+      
+
     }
     fetchData()
   }, [])
+  console.log(loginData)
 
   const handleLogin = async () => {
     setError("");
