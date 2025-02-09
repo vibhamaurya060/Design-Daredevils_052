@@ -3,10 +3,10 @@ import { Navigate } from 'react-router-dom';
 
 import { useAuth } from '../Context/AuthContext';
 
-const PrivateRoute = ({ children }) => {
+const PrivateRoutes = ({ children }) => {
 const {bool} = useAuth()
- 
-  return bool ? children :<Navigate to='/login'/>;
+const authToken = localStorage.getItem("authToken");
+  return authToken ? children :<Navigate to='/login'/>;
 };
 
-export default PrivateRoute;
+export default PrivateRoutes;
