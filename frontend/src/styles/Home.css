@@ -23,33 +23,61 @@ body {
   }
   
   .property-card {
+    position: relative; /* Ensures overlay can be positioned properly */
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     transition: transform 0.3s;
     text-align: center;
-  }
-  
-  .property-card img {
+    width: 100%;
+}
+
+.property-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-  }
-  
-  .property-card h3 {
-    margin: 10px 0;
+}
+
+/* Overlay content */
+.property-info {
+    position: absolute;
+    top: 0; /* Covers the image */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    opacity: 1; /* Always visible */
+    transition: background 0.3s ease;
+}
+
+/* Title Styling */
+.property-info h3 {
+    margin: 5px 0;
     font-size: 1.2rem;
-  }
-  
-  .property-card p {
-    color: #ff5733;
+}
+
+/* Price Styling */
+.property-info p {
+    color: #ffcc00; /* Light color for visibility */
     font-weight: bold;
-  }
-  
-  .property-card:hover {
+}
+
+/* Hover Effect */
+.property-card:hover {
     transform: scale(1.05);
-  }
+}
+
+.property-card:hover .property-info {
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay on hover */
+}
+
   
   .homepage {
     text-align: center;

@@ -5,11 +5,13 @@ import "../styles/Navbar.css";
 import logo from "../assets/home.png";
 import { useAuth } from "../Context/AuthContext";
 
+
 const Navbar = () => {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+ 
 
   const handleLogout = () => {
     logout();
@@ -27,6 +29,8 @@ const Navbar = () => {
           alt="Logo"
           className="w-12 h-12 rounded-full cursor-pointer"
         />
+       
+   
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-8">
