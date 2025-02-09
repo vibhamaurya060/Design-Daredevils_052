@@ -5,7 +5,11 @@ const router=jsonServer.router("db.json");
 const middlewares=jsonServer.defaults();
 const port=process.env.PORT || 3000;
 
-const frontendUrl = "https://design-daredevils-052-3fnc.vercel.app"; 
+const frontendUrl =[
+  'http://localhost:5173', 
+  'https://design-daredevils-052-3fnc.vercel.app'
+
+] 
 
 
 server.use(

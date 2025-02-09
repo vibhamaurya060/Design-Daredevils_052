@@ -23,9 +23,9 @@ const Signup = () => {
     try {
       
       const response = await axios.get("https://design-daredevils-052.onrender.com/users");
-      const users =await response.data;
+      const users = response.data;
 
-      const userExists = users.some(
+      const userExists = users.find(
         (user) => user.email === form.email || user.username === form.username
       );
 
@@ -36,7 +36,7 @@ const Signup = () => {
 
       // Add the new user to the database
       await axios.post("https://design-daredevils-052.onrender.com/users", form);
-
+       console.log(response);
       alert("Signup successful! You can now log in.");
       navigate("/login");
     } catch (error) {
