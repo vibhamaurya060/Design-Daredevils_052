@@ -41,7 +41,7 @@ const Login = () => {
       login(user);
 
       alert(`Login successful!`);
-      navigate(-1);
+      navigate("/");
     } else {
       setError("Invalid email or password! Please try again.");
     }
